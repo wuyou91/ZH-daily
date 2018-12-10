@@ -1,0 +1,27 @@
+<scroll-view bindscrolltolower="addData" scroll-y="true">
+  <swiper class="banner"
+    indicator-dots="true"
+    indicator-active-color="#fff"
+    autoplay="true"
+    circular="true">
+    <block wx:for="{{data.top_stories}}" wx:key="item.id">
+      <swiper-item position="relative" class="banner-item">
+        <navigator url="../news/news?id={{item.id}}">
+          <text class="banner-item-text">{{item.title}}</text>
+          <image src="{{item.image}}" class="banner-item-image"/>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="today-news">
+    <text class="title">今日热文</text>
+    <view class="news-list" wx:for="{{data.stories}}" wx:key="{{item.id}}">
+      <navigator url="../news/news?id={{item.id}}">
+        <view class="news-list-item">
+          <text>{{item.title}}</text>
+          <image src="{{item.images}}"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</scroll-view>
