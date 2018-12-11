@@ -27,10 +27,32 @@ Page({
         url: `https://news-at.zhihu.com/api/4/news/before/${dateToString(before)}`
       },
       success: (res) => {
+        let d = JSON.parse(res.result)
+        let date = new Date(d.date.replace(/(\d{4})(\d{2})(\d{2})/g, '$1-$2-$3'))
+        let month = date.getMonth()+1
+        let day = date.getDate()
+        let week = date.getDay()
+        switch(week){
+          case 1 : week = '一' 
+            break;
+          case 2 : week = '二' 
+            break;
+          case 3 : week = '三'
+            break;
+          case 4 : week = '四'
+            break;
+          case 5 : week = '五'
+            break;
+          case 6 : week = '六'
+            break;
+          default:
+            week = '日'
+        }
+        d.date = month + '月' + day + '日 ' + '  星期' + week
         let n = [...this.data.beforeNews]
-        n.push(JSON.parse(res.result))
+        n.push(d)
         this.setData({
-          beforeNews:[...n] // 获取news列表
+          beforeNews:[...n]
         })
       }
     })

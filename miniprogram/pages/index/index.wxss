@@ -22,11 +22,11 @@ scroll-view{
 }
 
 .today-news{
-  padding: 30rpx 0;
+  padding: 20rpx;
   background: #efefef;
 }
 .today-news .title{
-  color: #ababab;
+  color: #9c9c9c;
   margin: 20rpx;
 }
 .today-news .news-list{
@@ -45,6 +45,6 @@ scroll-view{
 }
 .news-list-item image{
   display: block;
-  width: 200rpx;
-  height: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
 }

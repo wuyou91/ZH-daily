@@ -24,4 +24,17 @@
       </navigator>
     </view>
   </view>
+  <block wx:for="{{beforeNews}}" wx:key="{{index}}">
+    <view class="today-news">
+    <text class="title">{{item.date}}</text>
+    <view class="news-list" wx:for="{{item.stories}}" wx:for-item="newsList" wx:key="{{newsList.id}}">
+      <navigator url="../news/news?id={{newsList.id}}">
+        <view class="news-list-item">
+          <text>{{newsList.title}}</text>
+          <image src="{{newsList.images}}"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  </block>
 </scroll-view>
