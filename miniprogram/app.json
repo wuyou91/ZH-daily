@@ -8,6 +8,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0084ff",
     "navigationBarTitleText": "ZH-daily",
-    "navigationBarTextStyle": "light"
-  }
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }

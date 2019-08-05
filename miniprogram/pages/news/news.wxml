@@ -1,3 +1,9 @@
-<view>
-  <text>{{news}}</text>
+<view class="news">
+  <view class="header">
+    <image class="header-img" src="{{news.image}}" mode="widthFix"></image>
+    <text class="title">{{news.title}}</text>
+    <text class="img-source">图片：{{news.image_source}}</text>
+  </view>
+  <rich-text class="content" nodes="{{content}}"></rich-text>
 </view>
+<!-- <web-view src="{{news.share_url}}"></web-view> -->
